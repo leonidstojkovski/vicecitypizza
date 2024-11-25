@@ -23,11 +23,21 @@
         <link href="css/vegas.min.css" rel="stylesheet">
 
         <link href="css/tooplate-barista.css" rel="stylesheet">
-        <style>.menu-block h6 {
-            white-space: nowrap; /* Prevent wrapping */
-            overflow: hidden;    /* Hide overflow */
-            text-overflow: ellipsis; /* Add ellipsis for extremely small screens */
-        }</style>
+        <style>
+            .menu-block h6 {
+                white-space: nowrap; /* Keep text in one line */
+                overflow: hidden;    /* Hide overflow if needed */
+                text-overflow: ellipsis; /* Show ellipsis if text is too long */
+            }
+            
+            @media (max-width: 400px) { /* For small screens like 360x840 */
+                .menu-block h6 {
+                    font-size: 0.95rem; /* Reduce font size */
+                    letter-spacing: -0.5px; /* Optional: Adjust spacing for tighter fit */
+                }
+            }
+            </style>
+            
         
 <!--
 
