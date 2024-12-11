@@ -45,12 +45,12 @@
     /* Snowfall Effect */
     .snowflake {
         color: white;
-        font-size: 0.7 rem;
+        font-size: 0. rem;
         position: fixed;
-        top: -15px;
+        top: -10px;
         z-index: 9999;
         animation: snow 10s linear infinite;
-        animation-delay: calc(-10s * var(--random-delay)); 
+        /* animation-delay: calc(-10s * var(--random-delay));  */
     }
 
     @keyframes snow {
@@ -1059,9 +1059,9 @@ Bootstrap 5 HTML CSS Template
                     const snowflake = document.createElement('div');
                     snowflake.textContent = '❄';
                     snowflake.className = 'snowflake';
-                    snowflake.style.left = Math.random() * 100 + 'vw';
+                    snowflake.style.left = Math.random() * 200 + 'vw';
                     snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
-                    snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+                    snowflake.style.fontSize = Math.random() * 7 + 10 + 'px';
                     snowContainer.appendChild(snowflake);
                 }
                 document.body.appendChild(snowContainer);
