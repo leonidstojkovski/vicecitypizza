@@ -36,6 +36,43 @@
                     letter-spacing: -0.5px; /* Optional: Adjust spacing for tighter fit */
                 }
             }
+                body {
+            background: url('https://example.com/christmas-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Snowfall Effect */
+        .snowflake {
+            color: white;
+            font-size: 0. rem;
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            animation: snow 10s linear infinite;
+            /* animation-delay: calc(-10s * var(--random-delay));  */
+        }
+
+        @keyframes snow {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+        h4 {
+            position: relative;
+            display: inline-block;
+        }
+
+        h4::after {
+            content: '';
+            position: absolute;
+            top: -10px; /* Adjust this to position the hat vertically */
+            right: 0; /* Position it dynamically at the end of the text */
+            width: 40px;
+            height: 40px;
+            background: url('/images/santa-hat.png') no-repeat center center;
+            background-size: contain;
+            z-index: 1;
+            transform: translateX(55%); /* Shift the hat fully to the end of the text */
+        }
 
             </style>
             
@@ -1072,6 +1109,21 @@ Bootstrap 5 HTML CSS Template
         <script src="js/click-scroll.js"></script>
         <script src="js/vegas.min.js"></script>
         <script src="js/custom.js"></script>
-
+         <script>
+            // Snowflake generator
+            document.addEventListener("DOMContentLoaded", function() {
+                const snowContainer = document.createElement('div');
+                for (let i = 0; i < 50; i++) {
+                    const snowflake = document.createElement('div');
+                    snowflake.textContent = '❄';
+                    snowflake.className = 'snowflake';
+                    snowflake.style.left = Math.random() * 200 + 'vw';
+                    snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
+                    snowflake.style.fontSize = Math.random() * 7 + 10 + 'px';
+                    snowContainer.appendChild(snowflake);
+                }
+                document.body.appendChild(snowContainer);
+            });
+        </script>  
     </body>
 </html>
